@@ -6,6 +6,7 @@ main>.banner{
     width: 100vw;
     overflow: hidden;
     background: rgb(224, 224, 224);
+    position: relative;
 }
 
 main>.banner>.container{
@@ -15,6 +16,29 @@ main>.banner>.container{
     position: relative;
     transition: all ease .5s;
     left:  0vw;
+}
+
+main>.banner>.pagination{
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main>.banner>.pagination>.pag{
+    height: 20px;
+    width: 20px;
+    background: rgba(0,0,0,.4);
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+main>.banner>.pagination>.page-active{
+    background: #4b7eb8!important;
+    box-shadow: 0 0 3px 1px #0077ff;
 }
 
 main>.banner>.container>.banner-right{
@@ -50,7 +74,10 @@ main>.banner>.container>.item-banner>.img{
 }
 
 main>.banner>.container>.item-banner>.info{
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
+    align-items: flex-start;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -63,4 +90,15 @@ main>.banner>.container>.item-banner>.info>h2{
 main>.banner>.container>.item-banner>.info>p{
     max-width: 80%;
     color: rgba(0,0,0,.5);
+}
+
+main>.banner>.container>.item-banner>.info>.btn-banner{
+    background: #4b7eb8;
+    font-weight: bold;
+    color: white;
+    box-sizing: border-box;
+    padding: 15px 70px;
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
 }
