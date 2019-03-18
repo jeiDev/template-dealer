@@ -4,6 +4,7 @@
 main>.banner{
     height: 500px;
     width: 100vw;
+    max-width: 100%;
     overflow: hidden;
     background: rgb(224, 224, 224);
     position: relative;
@@ -11,11 +12,12 @@ main>.banner{
 
 main>.banner>.container{
     height: 100%;
-    width: 200vw;
+    width: 300vw;
     display: flex;
     position: relative;
     transition: all ease .5s;
     left:  0vw;
+    box-sizing: border-box;
 }
 
 main>.banner>.pagination{
@@ -34,6 +36,7 @@ main>.banner>.pagination>.pag{
     background: rgba(0,0,0,.4);
     margin-right: 5px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 main>.banner>.pagination>.page-active{
@@ -49,6 +52,8 @@ main>.banner>.container>.item-banner{
     height: 100%;
     width: 100vw;
     display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 
@@ -83,8 +88,8 @@ main>.banner>.container>.item-banner>.info{
 
 main>.banner>.container>.item-banner>.info>h2{
     font-size: 3em;
-    margin-top: 40px;;
-    margin-bottom: 20px
+    margin-top: 80px;
+    margin-bottom: 20px;
 }
 
 main>.banner>.container>.item-banner>.info>p{
@@ -100,5 +105,209 @@ main>.banner>.container>.item-banner>.info>.btn-banner{
     padding: 15px 70px;
     text-align: center;
     margin-top: 30px;
+    cursor: pointer;
+}
+
+main>.banner>.container>.banner-right>.info{
+    padding-left: 80px; 
+}
+
+/************************************
+**** SECTION ONE
+************************************/
+main>.section-one>.max-width{
+    display: flex;
+    box-sizing: border-box;
+    padding: 50px 0;
+}
+
+main>.section-one>.max-width>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+main>.section-one>.max-width>div>img{
+    margin-bottom: 15px;
+}
+
+main>.section-one>.max-width>div>h1{
+    color: rgba(0,0,0,.8);
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+main>.section-one>.max-width>div>p{
+    font-size: .9em;
+    text-align: justify;
+    color: rgba(0,0,0,.7);
+}
+
+/************************************
+**** SECTION TWO
+************************************/
+main>.section-two{
+    background: #4b7eb8;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 400px;
+}
+
+main>.section-two>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main>.section-two>div>h2{
+    font-size: 3em;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+main>.section-two>div>p{
+    text-align: justify;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+main>.section-two>div>a{
+    background: white;
+    padding: 10px 80px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #4b7eb8;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+/************************************
+**** SECTION THREE
+************************************/
+main>.section-three{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main>.section-three>.max-width>h2{
+    text-align: center;
+    font-size: 2.5em;
+    color: #4b7eb8;
+}
+
+main>.section-three>.max-width>.content-cars{
+    display: flex;
+}
+
+main>.section-three>.max-width>.content-cars>.car{
+    flex: 1 1 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main>.section-three>.max-width>.content-cars>.car>.img{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+main>.section-three>.max-width>.content-cars>.car>.img>img{
+    object-fit: cover;
+    width: 100%;
+    cursor: pointer;
+}
+
+main>.section-three>.max-width>.content-cars>.car>span{
+    font-size: 1.5em;
+}
+
+/************************************
+**** FOOTER
+************************************/
+footer{
+    display: flex;
+    justify-content: center;
+    background: #4b7db8;
+    color: white;
+    padding: 80px 0 30px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer>.max-width{
+    display: flex;
+    flex-direction: column;
+}
+
+footer>.max-width>div>.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+footer>.max-width>.column1>.right>div{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+footer>.max-width>.column1>.right>div>input{
+    padding: 12px 10px;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 10px 0 0 10px;
+}
+
+footer>.max-width>.column1>.right>div>input:focus{
+    outline: 0px;
+}
+
+footer>.max-width>.column1>.right>div>div{
+    border: 1px solid white;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+
+footer>.max-width>.column1>.right>div>div:hover{
+    background: white;
+    border-left: 1px solid #4b7db8;
+    color: #4b7db8;
+}
+
+footer>.max-width>div{
+    display: flex;
+}
+
+footer>.max-width>div>div{
+    flex: 1 1 auto;
+    max-width: 50%;
+}
+
+footer>.max-width>.column1{
+    padding-bottom: 50px;
+}
+
+footer>.max-width>.column2{
+    font-size: .9em;
+}
+
+footer>.max-width>.column2>.right>div>i{
+    margin-left: 15px;
     cursor: pointer;
 }

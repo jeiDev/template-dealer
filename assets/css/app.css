@@ -32,6 +32,10 @@ header>.max-width>.menu-center{
     justify-content: center;
 }
 
+.page-active{
+    background: #4b7eb894!important;
+}
+
 header>.max-width>.menu-center>a{
     color: #4b7db8;
     text-decoration: none;
