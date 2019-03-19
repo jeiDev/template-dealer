@@ -67,21 +67,338 @@ main{
     min-width: 1024px;
 }
 
+/************************************
+**** VIEW CARS
+************************************/
+
+body>main>.view-car>.max-width>.title{
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body>main>.view-car>.max-width>.content-car{
+    display: flex;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>div{
+    margin-right: 200px;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1{
+    display: flex;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.zoon{
+    display: flex;
+    flex-direction: column;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.zoon>i{
+    margin-bottom: 10px;
+    color: #4b7db8;
+    cursor: pointer;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img>.animation{
+    position: relative;
+    transition: all ease .5s;
+    top: 0px;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img>.animation,
+body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img>.animation>.box-img{
+    width: 100%;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img>.animation>.box-img{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img>.animation>.box-img>img{
+    object-fit: contain;
+    height: 100%;
+}
 
 
+body>main>.view-car>.max-width>.content-car>.left>.column1>.pagination-img{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.pagination-img>.pag{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid #4b7db8;
+    margin: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column1>.pagination-img>.pag>.pag-active-show{
+    position: absolute;
+    bottom: 0;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column2>.content-text>p{
+    text-align: justify;
+    box-sizing: border-box;
+    padding: 20px 0;
+    color: rgba(0,0,0,.5);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8em;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column2>.read-more{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column2>.read-more>.bar{
+    width: 100%;
+    height: 2px;
+    background: rgba(0,0,0,.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column2>.read-more>.bar>.circle{
+    background: white;
+    height: 30px;
+    width: 30px;
+    border: 2px solid rgba(0,0,0,.1);
+    border-radius: 50%;
+    color: rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column2>.read-more>.bar>.circle>i{
+    position: relative;
+    top: 1.5px;
+}
+
+body>main>.view-car>.max-width>.content-car>.left>.column2>.read-more>span{
+    color: rgba(0,0,0,.3);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/***************************************************************
+******** RIGHT
+***************************************************************/
+body>main>.view-car>.max-width>.content-car>.right{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-width: 250px;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.title,
+body>main>.view-car>.max-width>.content-car>.right>.price,
+body>main>.view-car>.max-width>.content-car>.right>.color,
+body>main>.view-car>.max-width>.content-car>.right>.call-to-action{
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 15px 5px;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.title>h2{
+    font-weight: 500;
+    font-size: .9em;
+    line-height: 3px;
+    color: rgba(0,0,0,.7);
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.title>span{
+    font-size: .6em;
+    color: rgba(0,0,0,.5);
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.price>span{
+    font-size: .8em;
+    font-weight: 500;
+    color: rgba(0,0,0,.7);
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.color>.text>span{
+    font-size: .8em;
+    color: rgba(0,0,0,.5)
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.color>.text>b{
+    font-size: .8em;
+    color: rgba(0,0,0,.8)
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.color>.circle-color{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.color>.circle-color>.c-circle{
+    height: 12px;
+    width: 12px;
+    margin: 2px;
+    border-radius: 50%;
+    opacity: .5;
+    cursor: pointer;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.call-to-action>.btn{
+    background: #62d19c;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 15px 0;
+    font-size: .8em;
+    color: white;
+    cursor: pointer;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.info>.menus{
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.title-info{
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 15px 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.title-info>div{
+    flex: 1 1 auto;
+    font-size: .75em;
+    color: rgba(0,0,0,.8);
+    font-weight: bold;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.content-info{
+    padding: 15px 5px;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.content-info>div{
+    display: flex;
+    align-items: center;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.content-info>div>div{
+    flex: 1 1 auto;
+    font-size: .75em;
+    color: rgba(0,0,0,.4);
+    font-weight: bold;
+}
+
+body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.content-info>div>span{
+    font-size: .75em;
+    color: rgba(0,0,0,.4);
+}
+
+.c-circle-active{
+    opacity: 1!important;
+    height: 15px!important;
+    width: 15px!important;
+}
+
+.pag-active-show{
+    background: #4b7db8;
+    height: 10px!important;
+    width: 10px;
+    transition: all ease .5s;
+}
+
+.c-circle-red{
+    background: red;
+}
+
+.c-circle-black{
+    background: black;
+}
+
+.c-circle-green{
+    background: green;
+}
+
+.c-circle-yellow{
+    background: yellow;
+}
+
+.c-circle-white{
+    background: white;
+    border: 1px solid black;
+    height: 10px!important;
+    width: 10px!important;
+}
+
+.top0{
+    top: 0!important;
+    height: 0;
+}
+
+.pagination-img>.pag>.hheight0{
+    height: 0px!important;
+}
 
 
+/***************************************************************
+******** ANIMATION
+***************************************************************/
+.fade-in{
+    animation: .5s fade-in forwards;
+}
 
+.fade-out{
+    animation: .5s fade-out forwards;
+}
 
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
 
+    to{
+        opacity: 1;
+    }
+}
 
+@keyframes fade-out{
+    from{
+        opacity: 1;
+    }
 
-
-
-
-
-
-
+    to{
+        opacity: 0;
+    }
+}
 
 
 
