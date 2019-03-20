@@ -1,4 +1,8 @@
 class createDOM {
+    constructor(url){
+        this.url = url
+    }
+
     header() {
         let header = document.querySelector("header")
         let center = document.createElement("div")
@@ -7,14 +11,14 @@ class createDOM {
 
             if (i == 0) {
                 let img = document.createElement("img")
-                img.setAttribute("src", "./assets/img/logotipo.png")
+                img.setAttribute("src", `${this.url}assets/img/logotipo.png`)
                 section.appendChild(img)
             } else if (i == 1) {
                 let menus = {
                     "HOME": "/",
                     "CARS": "card.html",
                     "SHIPPING": "shipping.html",
-                    "ABOUT": "about.html",
+                    "ABOUT": "/about",
                     "CONTACT US": "contact.html"
                 }
 
@@ -80,11 +84,15 @@ class createDOM {
             time = setInterval(() => {
                 if (num < (items.length - 1) && active) {
                     num += 1
+                    document.querySelector(".banner-active").classList.remove("banner-active")
+                    document.getElementById(`banner${num}`).classList.add("banner-active")
                     document.querySelector(".page-active").classList.remove("page-active")
                     document.getElementById(`pag${num}`).classList.add("page-active")
                     parent.style.left = `-${num * 100}vw`
                 } else if (active) {
                     num = 0
+                    document.querySelector(".banner-active").classList.remove("banner-active")
+                    document.getElementById(`banner${num}`).classList.add("banner-active")
                     document.querySelector(".page-active").classList.remove("page-active")
                     document.getElementById(`pag${num}`).classList.add("page-active")
                     parent.style.left = `-${0}vw`
@@ -96,6 +104,8 @@ class createDOM {
             pag[i].addEventListener("click", () => {
                 clearInterval(time)
                 num = +pag[i].getAttribute("pag")
+                document.querySelector(".banner-active").classList.remove("banner-active")
+                document.getElementById(`banner${num}`).classList.add("banner-active")
                 document.querySelector(".page-active").classList.remove("page-active")
                 document.getElementById(`pag${num}`).classList.add("page-active")
                 parent.style.left = `-${num * 100}vw`
@@ -175,7 +185,7 @@ class createDOM {
                     let boxImg = document.createElement("div")
                     let img = document.createElement("img")
 
-                    img.src = `../assets/img/cars/${car.brand.toLowerCase()}-${car.general.model.toLowerCase()}-${car.features.year.toLowerCase()}/${e}-${car.selectColor}.${car.typeImg}`
+                    img.src = `${this.url}assets/img/cars/${car.brand.toLowerCase()}-${car.general.model.toLowerCase()}-${car.features.year.toLowerCase()}/${e}-${car.selectColor}.${car.typeImg}`
 
                     boxImg.setAttribute("class", "box-img")
 
@@ -238,6 +248,7 @@ class createDOM {
                             setTimeout(() => {
                                 newCircle.classList.add("pag-active-show")
                                 pag.classList.add("pag-active-show")
+                                pag.style.background = "#4b7db8"
                             }, 10)
 
 
@@ -265,7 +276,7 @@ class createDOM {
                 
                 text.setAttribute("class", "text")
                 circleColor.setAttribute("class", "circle-color")
-                text.innerHTML = ` <span>Selected color: </span><b>${car.selectColor}</b>`
+                text.innerHTML = ` <span>Selected color: </span><b>${this.firstCapitalLetter(car.selectColor)}</b>`
                 
                 car.color.forEach(e => {
                     let color = document.createElement("div")
@@ -372,8 +383,89 @@ class createDOM {
                     "years of use": "0",
                     km: "0"
                 }
-
+            },
+            2:{
+                brand: "Hyundai",
+                imgs: ["hyundai-1", "hyundai-2"],
+                typeImg: "jpg",
+                color: ["red", "black", "white", "green"],
+                class: "C",
+                selectColor: "white",
+                price: "$ 50 000",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorums",
+                general: {
+                    model: "Elantra",
+                    doors: "4",
+                    seats: "4",
+                    luggage: "2",
+                    transmission: "Auto",
+                    "air aconditioning": "Yes"
+                },
+                features:{
+                    status: "Used",
+                    year: "2017",
+                    rubber: "16"
+                },tearms:{
+                    "years of use": 2,
+                    km: "125"
+                }
+            },
+            3: {
+                brand: "Honda",
+                imgs: ["honda-1", "honda-2"],
+                typeImg: "png",
+                color: ["red", "black", "white", "green"],
+                class: "A",
+                selectColor: "white",
+                price: "$ 90 000",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorums",
+                general: {
+                    model: "Civic",
+                    doors: "4",
+                    seats: "4",
+                    luggage: "2",
+                    transmission: "Auto",
+                    "air aconditioning": "Yes"
+                },
+                features: {
+                    status: "New",
+                    year: "2016",
+                    rubber: "16"
+                }, tearms: {
+                    "years of use": "0",
+                    km: "0"
+                }
+            },
+            4:{
+                brand: "Audi",
+                imgs: ["audi-1"],
+                typeImg: "png",
+                color: ["red", "black", "white", "green", "gray"],
+                class: "A",
+                selectColor: "gray",
+                price: "$ 300 000",
+                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorum natus quidem iste, tenetur quibusdam temporibus consectetur ex facere eos quaerat nobis exercitationem hic quas. Eum, nulla nisi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis totam distinctio dolorums",
+                general: {
+                    model: "Motorsan",
+                    doors: "4",
+                    seats: "4",
+                    luggage: "2",
+                    transmission: "Auto",
+                    "air aconditioning": "Yes"
+                },
+                features:{
+                    status: "New",
+                    year: "2017",
+                    rubber: "16"
+                },tearms:{
+                    "years of use": "0",
+                    km: "0"
+                }
             }
         }
+    }
+
+    firstCapitalLetter(text){
+        return text.charAt(0).toUpperCase() + text.slice(1);
     }
 }

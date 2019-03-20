@@ -16,7 +16,6 @@ header{
 header>.max-width{
     display: flex;
     box-sizing: border-box;
-    padding: 0 20px;
     height: 80px;
     align-items: center;
 }
@@ -68,6 +67,86 @@ main{
 }
 
 /************************************
+**** FOOTER
+************************************/
+footer{
+    display: flex;
+    justify-content: center;
+    background: #4b7db8;
+    color: white;
+    padding: 80px 0 30px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer>.max-width{
+    display: flex;
+    flex-direction: column;
+}
+
+footer>.max-width>div>.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+footer>.max-width>.column1>.right>div{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+footer>.max-width>.column1>.right>div>input{
+    padding: 12px 10px;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 10px 0 0 10px;
+}
+
+footer>.max-width>.column1>.right>div>input:focus{
+    outline: 0px;
+}
+
+footer>.max-width>.column1>.right>div>div{
+    border: 1px solid white;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+
+footer>.max-width>.column1>.right>div>div:hover{
+    background: white;
+    border-left: 1px solid #4b7db8;
+    color: #4b7db8;
+}
+
+footer>.max-width>div{
+    display: flex;
+}
+
+footer>.max-width>div>div{
+    flex: 1 1 auto;
+    max-width: 50%;
+}
+
+footer>.max-width>.column1{
+    padding-bottom: 50px;
+}
+
+footer>.max-width>.column2{
+    font-size: .9em;
+}
+
+footer>.max-width>.column2>.right>div>i{
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+/************************************
 **** VIEW CARS
 ************************************/
 
@@ -83,8 +162,8 @@ body>main>.view-car>.max-width>.content-car{
     display: flex;
 }
 
-body>main>.view-car>.max-width>.content-car>.left>div{
-    margin-right: 200px;
+body>main>.view-car>.max-width>.content-car>.left{
+    flex: 1 1 auto;
 }
 
 body>main>.view-car>.max-width>.content-car>.left>.column1{
@@ -215,6 +294,7 @@ body>main>.view-car>.max-width>.content-car>.left>.column2>.read-more>span{
 body>main>.view-car>.max-width>.content-car>.right{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-width: 250px;
+    margin-left: 50px;
 }
 
 body>main>.view-car>.max-width>.content-car>.right>.title,
@@ -323,12 +403,6 @@ body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.content-info>di
     color: rgba(0,0,0,.4);
 }
 
-.c-circle-active{
-    opacity: 1!important;
-    height: 15px!important;
-    width: 15px!important;
-}
-
 .pag-active-show{
     background: #4b7db8;
     height: 10px!important;
@@ -352,11 +426,21 @@ body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.content-info>di
     background: yellow;
 }
 
+.c-circle-gray{
+    background: gray;
+}
+
 .c-circle-white{
     background: white;
     border: 1px solid black;
     height: 10px!important;
     width: 10px!important;
+}
+
+.c-circle-active{
+    opacity: 1!important;
+    height: 15px!important;
+    width: 15px!important;
 }
 
 .top0{

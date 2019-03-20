@@ -1,0 +1,119 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1 1 auto;
+}
+
+body>main>section>.max-width>.title{
+    box-sizing: border-box;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body>main>section>.max-width>.container{
+    display: flex;
+}
+
+body>main>section>.max-width>.container>div{
+    box-sizing: border-box;
+    max-width: 50%;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body>main>section>.max-width>.container>.left{
+    padding-right: 1%;
+}
+
+body>main>section>.max-width>.container>.left>.content-section{
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+body>main>section>.max-width>.container>.left>.content-section>div{
+    position: absolute;
+    opacity: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body>main>section>.max-width>.container>.left>.content-section>div>h3{
+    color: #4b7db8;
+    margin-bottom: 10px;
+}
+
+body>main>section>.max-width>.container>.left>.content-section>div>p{
+    font-size: .9em;
+    color: rgba(0,0,0,.6);
+}
+
+body>main>section>.max-width>.container>.left>.pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+body>main>section>.max-width>.container>.left>.pagination>.circle-p{
+    height: 8px;
+    width: 8px;
+    margin: 2px;
+    border-radius: 50%;
+    background: #aed3fd;
+    cursor: pointer;
+}
+
+body>main>section>.max-width>.container>.left>.pagination>.circle-p-active{
+    background: #4b7db8;
+}
+
+body>main>section>.max-width>.container>.left>.content-section>.section-active{
+    opacity: 1;
+}
+
+body>main>section>.max-width>.container>.right{
+    padding-left: 1%;
+}
+
+body>main>section>.max-width>.container>.right>.load-content{
+    position: relative;
+    width: 100%;
+    background: #98dbbb;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+body>main>section>.max-width>.container>.right>.load-content>.load{
+    position: absolute;
+    height: 100%;
+    background: #62d19c;
+    border-radius: 0 20px 20px 0;
+}
+
+body>main>section>.max-width>.container>.right>.load-content>.data{
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-size: .9em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body>main>section>.max-width>.container>.right>.load-content>.data>div{
+    flex: 1 1 auto;
+}
+
+body>main>section>.max-width>.container>.right>.load-content>.data>.end{
+    text-align: end;
+}
