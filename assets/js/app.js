@@ -14,21 +14,28 @@ class createDOM {
                 img.setAttribute("src", `${this.url}assets/img/logotipo.png`)
                 section.appendChild(img)
             } else if (i == 1) {
+                let menuActive = location.pathname
                 let menus = {
                     "HOME": "/",
-                    "CARS": "card.html",
-                    "SHIPPING": "shipping.html",
+                    "CARS": "/cars",
+                    "SHIPPING": "/shipping",
                     "ABOUT": "/about",
-                    "CONTACT US": "contact.html"
+                    "CONTACT US": "/contact"
                 }
 
                 section.setAttribute("class", "menu-center")
+
+                menuActive = menuActive.split("/")
+                menuActive = menuActive[menuActive.length - 2]
+                menuActive = menuActive == "" ? "HOME" : menuActive
 
                 Object.keys(menus).forEach(key => {
                     let a = document.createElement("a")
 
                     a.innerText = key
                     a.setAttribute("href", menus[key])
+                    console.log(menuActive.toUpperCase())
+                    if(menuActive.toUpperCase() == key) a.style.fontWeight = "bold"
 
                     section.appendChild(a)
                 })
@@ -467,5 +474,45 @@ class createDOM {
 
     firstCapitalLetter(text){
         return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    animationBannerAbout(parent){
+        let items = parent.querySelectorAll(".item")
+        let circleP = document.querySelectorAll(".circle-p") 
+        let i = -1
+        var interval1 = null
+        var interval2 = null 
+
+        interval1 = setTimeout(()=>{
+            ejecut()
+        },5000)
+
+        function ejecut(){
+            if(i + 1 < items.length){
+                i += 1
+                items[i].classList.add("section-active")
+                circleP[i].classList.add("circle-p-active")
+
+                interval2 = setTimeout(()=>{
+                    items[i].classList.remove("section-active")
+                    circleP[i].classList.remove("circle-p-active")
+                    ejecut()
+                },5500)
+            }else{
+                i = -1  
+                ejecut()
+            }
+        }
+
+        for (let e = 0; e < circleP.length; e++) {
+            circleP[e].addEventListener("click", () => {
+                items[i].classList.remove("section-active")
+                circleP[i].classList.remove("circle-p-active")
+                i = e - 1
+                clearInterval(interval1)
+                clearInterval(interval2)
+                ejecut()
+            })
+        }
     }
 }

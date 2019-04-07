@@ -1,0 +1,30 @@
+main{
+    margin: 100px 0 50px 0;
+}
+
+main>section>div>div{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main>section>div>.title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+main>section>div>.content{
+    display: flex;
+}
+
+main>section>div>.content>.column-1{
+    flex: 1 1 auto;
+    margin-right: 80px;
+}
+
+main>section>div>.content>.column-1>h4,
+main>section>div>.content>.column-1>p{
+    margin-bottom: 20px;
+}
+
+main>section>div>.content>.column-2{
+    max-width: 40%;
+}
