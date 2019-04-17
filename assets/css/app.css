@@ -52,6 +52,41 @@ header>.max-width>.menu-right>.bar-menu{
     height: 35px;
 }
 
+.menu-mobile{
+    flex: 1 1 auto!important;
+    display: none;
+    justify-content: flex-end;
+    font-size: 2em;
+}
+
+.nav-mobile{
+    background: #4b7eb8;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 0;
+    transition: all ease .5s;
+    opacity: 0;
+    overflow: hidden; 
+}
+
+.nav-mobile>a{
+    text-decoration: none;
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    cursor: pointer; 
+}
+
+
+
 /************************************
 **** MAIN
 ************************************/
@@ -206,7 +241,9 @@ body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img>.animati
     height: 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+
 
 body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img>.animation>.box-img>img{
     object-fit: contain;
@@ -483,6 +520,65 @@ body>main>.view-car>.max-width>.content-car>.right>.info>.menus>.content-info>di
         opacity: 0;
     }
 }
+
+@media (max-width: 1024px) {
+    header>.max-width {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .max-width {
+        max-width: 100%!important;
+        min-width: auto!important;
+    }
+
+    body>main>.view-car{
+        display: flex;
+        justify-content: center;
+    }
+
+    body>main>.view-car>.max-width{
+        width: 90%;
+    }
+
+    body>main>.view-car>.max-width>.content-car {
+        flex-direction: column;
+    }
+
+    body>main>.view-car>.max-width>.content-car>.right{
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 550px){
+    .menu-mobile{
+        display: flex;
+    }
+
+    header>div>.menu-center,
+    header>div>.menu-right{
+        display: none!important;
+    }
+
+    footer>.max-width>.column1{
+        flex-direction: column;
+    }
+
+    footer>.max-width>.column1>div{
+        max-width: 100%;;
+    }
+
+    footer>.max-width>.column1>.right{
+        margin-top: 15px;
+    }
+
+    footer>.max-width>.column1>.right>div{
+        width: 100%;
+    }
+
+}
+
 
 
 

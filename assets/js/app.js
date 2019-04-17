@@ -1,12 +1,24 @@
 class createDOM {
-    constructor(url){
+    constructor(url) {
         this.url = url
     }
 
     header() {
         let header = document.querySelector("header")
+        let navMobile = document.createElement("nav")
         let center = document.createElement("div")
-        for (let i = 0; i < 3; i++) {
+        let menuMobileActive = false
+        let menus = {
+            "HOME": "/",
+            "CARS": "/cars",
+            "SHIPPING": "/shipping",
+            "ABOUT": "/about",
+            "CONTACT US": "/contact"
+        }
+
+        navMobile.classList.add("nav-mobile")
+
+        for (let i = 0; i < 4; i++) {
             let section = document.createElement("div")
 
             if (i == 0) {
@@ -15,13 +27,6 @@ class createDOM {
                 section.appendChild(img)
             } else if (i == 1) {
                 let menuActive = location.pathname
-                let menus = {
-                    "HOME": "/",
-                    "CARS": "/cars",
-                    "SHIPPING": "/shipping",
-                    "ABOUT": "/about",
-                    "CONTACT US": "/contact"
-                }
 
                 section.setAttribute("class", "menu-center")
 
@@ -35,13 +40,13 @@ class createDOM {
                     a.innerText = key
                     a.setAttribute("href", menus[key])
                     console.log(menuActive.toUpperCase())
-                    if(menuActive.toUpperCase() == key) a.style.fontWeight = "bold"
+                    if (menuActive.toUpperCase() == key) a.style.fontWeight = "bold"
 
                     section.appendChild(a)
                 })
 
 
-            } else {
+            } else if (i > 1 && i < 3) {
                 let iconPhone = document.createElement("div")
                 let phone = document.createElement("div")
                 let bar1 = document.createElement("div")
@@ -70,12 +75,41 @@ class createDOM {
                 section.appendChild(lenguage)
                 section.appendChild(bar2)
                 section.appendChild(login)
+            } else {
+                let contentMenuMobile = document.createElement("div")
+
+                section.setAttribute("class", "menu-mobile")
+                contentMenuMobile.setAttribute("class", "fas fa-bars")
+                contentMenuMobile.style.cursor = "pointer"
+                section.appendChild(contentMenuMobile)
+
+                contentMenuMobile.addEventListener("click", () => {
+                    if (menuMobileActive) {
+                        menuMobileActive = false
+                        navMobile.style.opacity = 0
+                        navMobile.style.height = `${0}px`
+                        return
+                    }
+                    menuMobileActive = true
+                    navMobile.style.opacity = 1
+                    navMobile.style.height = `${Object.keys(menus).length * 50}px`
+                })
             }
             center.appendChild(section)
         }
 
+        Object.keys(menus).forEach(key => {
+            let a = document.createElement("a")
+            a.href = menus[key]
+            a.innerText = key
+            navMobile.appendChild(a)
+        })
+
+
+
         center.setAttribute('class', 'max-width')
         header.appendChild(center)
+        document.body.appendChild(navMobile)
     }
 
     animationBanner() {
@@ -87,6 +121,7 @@ class createDOM {
         let pag = document.querySelectorAll("#paginationBanner>.pag")
 
         interval()
+
         function interval() {
             time = setInterval(() => {
                 if (num < (items.length - 1) && active) {
@@ -158,6 +193,7 @@ class createDOM {
         let circleMore = document.createElement("div")
         let spanMode = document.createElement("span")
         let class2 = ["title", "price", "color", "call-to-action", "info"]
+        let zoom = 100
 
 
         title.innerText = "INVENTORY"
@@ -178,6 +214,24 @@ class createDOM {
                 dom.setAttribute("class", "zoon")
                 minus.setAttribute("class", "fas fa-search-minus")
                 plus.setAttribute("class", "fas fa-search-plus")
+
+                plus.addEventListener("click", () => {
+                    if(zoom <= 260){
+                        let box = document.querySelector("#animation>.box-img>img")
+                        zoom += 20
+                        box.style.width = `${zoom}%`
+                        box.style.height = `${zoom}%`
+                    }
+                })
+
+                minus.addEventListener("click", () => {
+                    if(zoom > 100){
+                        let box = document.querySelector("#animation>.box-img>img")
+                        zoom -= 20
+                        box.style.width = `${zoom}%`
+                        box.style.height = `${zoom}%`
+                    }
+                })
 
                 dom.appendChild(minus)
                 dom.appendChild(plus)
@@ -220,13 +274,13 @@ class createDOM {
                         pag.appendChild(circle)
 
                         pag.addEventListener("click", () => {
-                            if(z == active) return
+                            if (z == active) return
                             let pagActiveShow = document.querySelectorAll(".pag-active-show")
                             let parentActive = document.querySelector(".pag.pag-active-show")
                             let childActive = document.querySelector(".pag.pag-active-show>.pag-active-show")
                             let newCircle = pag.querySelector("div")
                             animation.style.top = `-${z * 300}px`
-                            
+
                             if (active < z) {
                                 active = z
                                 newCircle.classList.remove("top0")
@@ -239,14 +293,14 @@ class createDOM {
                                     pag.classList.add("pag-active-show")
                                 }, 10)
 
-                                setTimeout(()=>{
+                                setTimeout(() => {
                                     newCircle.classList.remove("top0")
-                                },500)
+                                }, 500)
 
-                                for (let i = 0; i < pagActiveShow.length; i++)  pagActiveShow[i].classList.remove("pag-active-show")
+                                for (let i = 0; i < pagActiveShow.length; i++) pagActiveShow[i].classList.remove("pag-active-show")
                                 return
                             }
-    
+
                             active = z
                             parentActive.style.background = "transparent"
                             childActive.classList.add("top0")
@@ -275,16 +329,16 @@ class createDOM {
             let dom = document.createElement("div")
             dom.setAttribute("class", class2[i])
 
-            if(i==0) dom.innerHTML = `<h2>${car.brand}</h2><span>${car.class}-CLASS</span>`
-            else if(i==1) dom.innerHTML = `<span>${car.price}</span>`
-            else if(i==2){
+            if (i == 0) dom.innerHTML = `<h2>${car.brand}</h2><span>${car.class}-CLASS</span>`
+            else if (i == 1) dom.innerHTML = `<span>${car.price}</span>`
+            else if (i == 2) {
                 let text = document.createElement("div")
                 let circleColor = document.createElement("div")
-                
+
                 text.setAttribute("class", "text")
                 circleColor.setAttribute("class", "circle-color")
                 text.innerHTML = ` <span>Selected color: </span><b>${this.firstCapitalLetter(car.selectColor)}</b>`
-                
+
                 car.color.forEach(e => {
                     let color = document.createElement("div")
 
@@ -294,21 +348,21 @@ class createDOM {
 
                 dom.appendChild(text)
                 dom.appendChild(circleColor)
-            }else if(i==3){
+            } else if (i == 3) {
                 let btn = document.createElement("div")
 
                 btn.innerText = "CALL NOW FOR DISCOUNT"
                 btn.setAttribute("class", "btn")
-                
+
                 dom.appendChild(btn)
-            }else if(i==4){
+            } else if (i == 4) {
                 let titles = ["general", "features", "tearms"]
 
                 titles.forEach(e => {
                     let select = car[e]
                     let menu = document.createElement("div")
                     let titleInfo = document.createElement("div")
-                    let contentInfo  = document.createElement("div")
+                    let contentInfo = document.createElement("div")
 
                     titleInfo.innerHTML = `<div>${e.toUpperCase()}</div><i class="fas fa-caret-down"></i>`
 
@@ -320,19 +374,19 @@ class createDOM {
                         let div = document.createElement("div")
 
                         div.innerHTML = `<div>${key.toUpperCase()}</div><span>${select[key]}</span>`
-                        
+
                         contentInfo.appendChild(div)
                     })
 
                     dom.appendChild(menu)
                     menu.appendChild(titleInfo)
                     menu.appendChild(contentInfo)
-            
+
                 })
             }
 
             right.appendChild(dom)
-            
+
         }
 
         section.setAttribute("class", "view-car")
@@ -382,16 +436,17 @@ class createDOM {
                     transmission: "Auto",
                     "air aconditioning": "Yes"
                 },
-                features:{
+                features: {
                     status: "New",
                     year: "2019",
                     rubber: "16"
-                },tearms:{
+                },
+                tearms: {
                     "years of use": "0",
                     km: "0"
                 }
             },
-            2:{
+            2: {
                 brand: "Hyundai",
                 imgs: ["hyundai-1", "hyundai-2"],
                 typeImg: "jpg",
@@ -408,11 +463,12 @@ class createDOM {
                     transmission: "Auto",
                     "air aconditioning": "Yes"
                 },
-                features:{
+                features: {
                     status: "Used",
                     year: "2017",
                     rubber: "16"
-                },tearms:{
+                },
+                tearms: {
                     "years of use": 2,
                     km: "125"
                 }
@@ -438,12 +494,13 @@ class createDOM {
                     status: "New",
                     year: "2016",
                     rubber: "16"
-                }, tearms: {
+                },
+                tearms: {
                     "years of use": "0",
                     km: "0"
                 }
             },
-            4:{
+            4: {
                 brand: "Audi",
                 imgs: ["audi-1"],
                 typeImg: "png",
@@ -460,11 +517,12 @@ class createDOM {
                     transmission: "Auto",
                     "air aconditioning": "Yes"
                 },
-                features:{
+                features: {
                     status: "New",
                     year: "2017",
                     rubber: "16"
-                },tearms:{
+                },
+                tearms: {
                     "years of use": "0",
                     km: "0"
                 }
@@ -472,34 +530,34 @@ class createDOM {
         }
     }
 
-    firstCapitalLetter(text){
+    firstCapitalLetter(text) {
         return text.charAt(0).toUpperCase() + text.slice(1);
     }
 
-    animationBannerAbout(parent){
+    animationBannerAbout(parent) {
         let items = parent.querySelectorAll(".item")
-        let circleP = document.querySelectorAll(".circle-p") 
+        let circleP = document.querySelectorAll(".circle-p")
         let i = -1
         var interval1 = null
-        var interval2 = null 
+        var interval2 = null
 
-        interval1 = setTimeout(()=>{
+        interval1 = setTimeout(() => {
             ejecut()
-        },5000)
+        }, 5000)
 
-        function ejecut(){
-            if(i + 1 < items.length){
+        function ejecut() {
+            if (i + 1 < items.length) {
                 i += 1
                 items[i].classList.add("section-active")
                 circleP[i].classList.add("circle-p-active")
 
-                interval2 = setTimeout(()=>{
+                interval2 = setTimeout(() => {
                     items[i].classList.remove("section-active")
                     circleP[i].classList.remove("circle-p-active")
                     ejecut()
-                },5500)
-            }else{
-                i = -1  
+                }, 5500)
+            } else {
+                i = -1
                 ejecut()
             }
         }

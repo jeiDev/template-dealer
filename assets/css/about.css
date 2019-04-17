@@ -132,3 +132,53 @@ body>main>section>.max-width>.container>.right>.load-content>.data>.end{
 .fade-out{
     animation: .5s fade-out forwards;
 }
+
+@media (max-width: 1024px){
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    body>main{
+        flex: 1 1 auto;
+    }
+
+    body>main>section{
+        width: 100%;
+    }
+
+    body>main>section>.max-width{
+        width: 100%
+    }
+
+    body>main>section>.max-width>.title{
+        padding-top: 120px;
+    }
+
+    body>main>section>.max-width>.container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body>main>section>.max-width>.container>div{
+        min-width: 80%;
+        padding: 0!important;
+    }
+
+    body>main>section>.max-width>.container>.right{
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width: 500px){
+    body>main>section>.max-width>.title{
+        padding-top: 30px;
+    }
+
+    body>main>section>.max-width>.container>.right{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}

@@ -1,7 +1,7 @@
 /************************************
 **** BANNER
 ************************************/
-main>.banner{
+main>.banner {
     height: 500px;
     width: 100vw;
     max-width: 100%;
@@ -10,17 +10,17 @@ main>.banner{
     position: relative;
 }
 
-main>.banner>.container{
+main>.banner>.container {
     height: 100%;
     width: 300vw;
     display: flex;
     position: relative;
     transition: all ease .5s;
-    left:  0vw;
+    left: 0vw;
     box-sizing: border-box;
 }
 
-main>.banner>.pagination{
+main>.banner>.pagination {
     position: absolute;
     bottom: 0;
     height: 50px;
@@ -30,25 +30,25 @@ main>.banner>.pagination{
     align-items: center;
 }
 
-main>.banner>.pagination>.pag{
+main>.banner>.pagination>.pag {
     height: 20px;
     width: 20px;
-    background: rgba(0,0,0,.4);
+    background: rgba(0, 0, 0, .4);
     margin-right: 5px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-main>.banner>.pagination>.page-active{
-    background: #4b7eb8!important;
+main>.banner>.pagination>.page-active {
+    background: #4b7eb8 !important;
     box-shadow: 0 0 3px 1px #0077ff;
 }
 
-main>.banner>.container>.banner-right{
+main>.banner>.container>.banner-right {
     flex-direction: row-reverse;
 }
 
-main>.banner>.container>.item-banner{
+main>.banner>.container>.item-banner {
     height: 100%;
     width: 100vw;
     display: flex;
@@ -58,24 +58,24 @@ main>.banner>.container>.item-banner{
     transition: all ease .1s;
 }
 
-main>.banner>.container>.banner-active{
+main>.banner>.container>.banner-active {
     opacity: 1;
 }
 
 
-main>.banner>.container>.item-banner>div{
+main>.banner>.container>.item-banner>div {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     max-width: 50%;
 }
 
-main>.banner>.container>.item-banner>div>img{
+main>.banner>.container>.item-banner>div>img {
     width: 90%;
     object-fit: cover;
 }
 
-main>.banner>.container>.item-banner>.img{
+main>.banner>.container>.item-banner>.img {
     object-fit: cover;
     display: flex;
     justify-content: flex-end;
@@ -84,7 +84,7 @@ main>.banner>.container>.item-banner>.img{
     padding-bottom: 50px;
 }
 
-main>.banner>.container>.item-banner>.info{
+main>.banner>.container>.item-banner>.info {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -92,18 +92,18 @@ main>.banner>.container>.item-banner>.info{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-main>.banner>.container>.item-banner>.info>h2{
+main>.banner>.container>.item-banner>.info>h2 {
     font-size: 3em;
     margin-top: 80px;
     margin-bottom: 20px;
 }
 
-main>.banner>.container>.item-banner>.info>p{
+main>.banner>.container>.item-banner>.info>p {
     max-width: 80%;
-    color: rgba(0,0,0,.5);
+    color: rgba(0, 0, 0, .5);
 }
 
-main>.banner>.container>.item-banner>.info>.btn-banner{
+main>.banner>.container>.item-banner>.info>.btn-banner {
     background: #4b7eb8;
     font-weight: bold;
     color: white;
@@ -114,20 +114,20 @@ main>.banner>.container>.item-banner>.info>.btn-banner{
     cursor: pointer;
 }
 
-main>.banner>.container>.banner-right>.info{
-    padding-left: 80px; 
+main>.banner>.container>.banner-right>.info {
+    padding-left: 80px;
 }
 
 /************************************
 **** SECTION ONE
 ************************************/
-main>.section-one>.max-width{
+main>.section-one>.max-width {
     display: flex;
     box-sizing: border-box;
     padding: 50px 0;
 }
 
-main>.section-one>.max-width>div{
+main>.section-one>.max-width>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,26 +135,26 @@ main>.section-one>.max-width>div{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
-main>.section-one>.max-width>div>img{
+main>.section-one>.max-width>div>img {
     margin-bottom: 15px;
 }
 
-main>.section-one>.max-width>div>h1{
-    color: rgba(0,0,0,.8);
+main>.section-one>.max-width>div>h1 {
+    color: rgba(0, 0, 0, .8);
     font-size: 1.3em;
     margin-bottom: 5px;
 }
 
-main>.section-one>.max-width>div>p{
+main>.section-one>.max-width>div>p {
     font-size: .9em;
     text-align: justify;
-    color: rgba(0,0,0,.7);
+    color: rgba(0, 0, 0, .7);
 }
 
 /************************************
 **** SECTION TWO
 ************************************/
-main>.section-two{
+main>.section-two {
     background: #4b7eb8;
     width: 100%;
     display: flex;
@@ -164,25 +164,25 @@ main>.section-two{
     height: 400px;
 }
 
-main>.section-two>div{
+main>.section-two>div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main>.section-two>div>h2{
+main>.section-two>div>h2 {
     font-size: 3em;
     padding: 30px 0;
     box-sizing: border-box;
 }
 
-main>.section-two>div>p{
+main>.section-two>div>p {
     text-align: justify;
     margin-bottom: 15px;
     font-size: 1em;
 }
 
-main>.section-two>div>a{
+main>.section-two>div>a {
     background: white;
     padding: 10px 80px;
     border-radius: 5px;
@@ -195,7 +195,7 @@ main>.section-two>div>a{
 /************************************
 **** SECTION THREE
 ************************************/
-main>.section-three{
+main>.section-three {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,17 +203,17 @@ main>.section-three{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-main>.section-three>.max-width>h2{
+main>.section-three>.max-width>h2 {
     text-align: center;
     font-size: 2.5em;
     color: #4b7eb8;
 }
 
-main>.section-three>.max-width>.content-cars{
+main>.section-three>.max-width>.content-cars {
     display: flex;
 }
 
-main>.section-three>.max-width>.content-cars>.car{
+main>.section-three>.max-width>.content-cars>.car {
     flex: 1 1 auto;
     overflow: hidden;
     display: flex;
@@ -221,7 +221,7 @@ main>.section-three>.max-width>.content-cars>.car{
     align-items: center;
 }
 
-main>.section-three>.max-width>.content-cars>.car>.img{
+main>.section-three>.max-width>.content-cars>.car>.img {
     height: 300px;
     width: 300px;
     display: flex;
@@ -229,13 +229,183 @@ main>.section-three>.max-width>.content-cars>.car>.img{
     justify-items: center;
 }
 
-main>.section-three>.max-width>.content-cars>.car>.img>img{
+main>.section-three>.max-width>.content-cars>.car>.img>img {
     object-fit: cover;
     width: 100%;
     cursor: pointer;
 }
 
-main>.section-three>.max-width>.content-cars>.car>span{
+main>.section-three>.max-width>.content-cars>.car>span {
     font-size: 1.5em;
 }
 
+@media (max-width: 770px) {
+    main>.banner>.container {
+        box-sizing: border-box;
+    }
+
+    main>.banner>.container>.item-banner {
+        flex-direction: column-reverse;
+    }
+
+    main>.banner>.container>.item-banner>div {
+        max-width: 100%;
+    }
+
+    main>.banner>.container>.item-banner>.img {
+        height: 250px;
+        min-height: 250px;
+        padding-top: 30px;
+    }
+
+    main>.banner>.container>.item-banner>.img>img {
+        height: 100%;
+        width: auto;
+    }
+
+    .banner-left {
+        padding-left: 80px;
+    }
+
+    main>.section-one {
+        padding: 50px 0;
+    }
+
+    main>.section-one>.max-width {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 100px;
+        grid-gap: 30px;
+    }
+
+    .max-width {
+        max-width: 100% !important;
+        min-width: auto !important;
+    }
+
+    main>.section-two {
+        height: auto;
+        padding: 30px;
+    }
+
+    main>.section-two>div>p {
+        padding: 20px;
+    }
+
+    main>.section-two>div>a {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    main>.section-three {
+        width: 100%;
+    }
+
+    main>.section-three>.max-width>.content-cars {
+        display: grid;
+    }
+
+    main>.section-three {
+        height: auto;
+        padding: 40px;
+    }
+
+    main>section {
+        box-sizing: border-box;
+    }
+
+    body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img>.animation>.box-img>img{
+        width: 100%;
+    }
+
+    body>main>.view-car>.max-width>.content-car>.left>.column1>.content-img{
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 450px) {
+    main>.section-two>div>h2 {
+        font-size: 1.5em;
+        padding-bottom: 15px;
+    }
+
+    main>.section-two>div>p {
+        font-size: .8em;
+        padding: 5px;
+    }
+
+    main>.section-one>.max-width {
+        padding: 0 10px;
+    }
+
+    main>.banner {
+        height: calc(100vh - 80px);
+    }
+
+    main>.banner>.container>.banner-right>.info {
+        padding: 0 !important;
+    }
+
+    main>.banner>.container>.item-banner {
+        padding: 0;
+        padding: 20px;
+    }
+
+    main>.banner>.container>.item-banner>.info>h2 {
+        margin-top: 10px
+    }
+
+    main>.banner>.container>.item-banner>.img>img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    main>.banner>.pagination>.pag {
+        height: 15px;
+        width: 15px;
+    }
+
+    main>.section-three>.max-width>.content-cars>.car>.img>img {
+        object-fit: contain;
+        width: 100%;
+    }
+
+    main>.section-three {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 420px) {
+    main>.banner>.container>.item-banner {
+        flex-direction: column;
+    }
+
+    main>.banner {
+        height: auto;
+    }
+
+    main>.banner>.container>.item-banner>.info>h2 {
+        font-size: 2em;
+    }
+
+    main>.banner>.container>.item-banner>.info>p {
+        display: none;
+    }
+
+    main>.banner>.container>.item-banner>.img {
+        padding: 0;
+        height: 200px;
+        min-height: 200px;
+    }
+
+    main>.banner>.container>.item-banner>.info {
+        display: flex;
+        align-items: center;
+    }
+
+    main>.banner>.container>.item-banner>.info>.btn-banner {
+        margin: 0;
+        margin-bottom: 30px;
+    }
+}

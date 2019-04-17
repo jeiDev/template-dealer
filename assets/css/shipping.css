@@ -28,3 +28,38 @@ main>section>div>.content>.column-1>p{
 main>section>div>.content>.column-2{
     max-width: 40%;
 }
+
+@media (max-width: 1024px){
+    main>section>div>.content{
+        flex-direction: column-reverse;
+    }
+
+    main>section>div>.content>div{
+        max-width: 100%!important;
+        margin: 0!important;
+    }
+
+    main>section>div>.content>.column-1{
+        padding: 0 50px 50px 50px;
+    }
+
+    main>section>div>.content>.column-2{
+        padding-bottom: 0!important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px!important;
+    }
+}
+
+
+@media (max-width: 500px){
+    main>section>div>.content>.column-2{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    main>section>div>.content>.column-2 img{
+        width: 100%;
+    }
+}

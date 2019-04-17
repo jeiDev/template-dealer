@@ -1,0 +1,123 @@
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 80px 0;
+}
+
+main>.header{
+    width: 100%;
+    background: #fcfcfc;
+    display: flex;
+    justify-content: center;
+}
+
+main>.header>div>img{
+    width: 100%;
+}
+
+main>.content-cars>div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-gap: 1header0px;
+    justify-content: center;
+}
+
+main>.content-cars>div>.car{
+    width: 250px;
+    overflow: hidden;
+    margin: 15px;
+}
+
+main>.content-cars>div>.car>.content-img{
+    width: 100%;
+    height: 150px;
+}
+
+
+main>.content-cars>div>.car>.content-img>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+main>.content-cars>div>.car>.content-info{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main>.content-cars>div>.car>.content-info>.title{
+    font-weight: 500;
+    color: rgba(0,0,0,.8);
+}
+
+main>.content-cars>div>.car>.content-info>.info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+main>.content-cars>div>.car>.content-info>.info>div{
+    padding: 3px;
+    border: 1px solid rgba(0,0,0,.2);
+    font-size: .6em;
+    text-align: center;
+    border-radius: 10px;
+    color: rgba(0,0,0,.5);
+}
+
+main>.content-cars>div>.car>.content-info>.info{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+main>.content-cars>div>.car>.content-price{
+    display: flex;
+}
+
+main>.content-cars>div>.car>.content-price>.price{
+    background: #62d19c;
+    color: white;
+    padding: 7px 15px;
+    width: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid #62d19c;
+}
+
+main>.content-cars>div>.car>.content-price>.btn{
+    border: 1px solid #62d19c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 0 20px 20px 0;
+    color: #62d19c;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+main>.content-cars>div>.car>.content-price>.btn:hover{
+    background: #62d19c;
+}
+
+main>.content-cars>div>.car>.content-price>.btn:hover i{
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    main>.content-cars>div{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px 100px;
+    }
+}
+
+@media (max-width: 450px) {
+    main>.content-cars>div{
+        grid-template-columns: 1fr;
+        grid-gap: 10px 0px;
+    }
+
+    main>.content-cars>div>.car{
+        padding: 10px 30px 60px 30px;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+}
