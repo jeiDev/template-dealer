@@ -2,9 +2,9 @@
 #### To be able to see the code, it is recommended to install the lr-http-server package from the node npm package.
 
 ### Instructions:
-   1 - Intalar in the cmd lr-http-server with the following command line -> npm install lr-http-server
-   2 - Clone the repository.
-   3 - Open the cmd where the cloned repository is and type lr-http-server so that a server runs on port 8080 by default.
+   ######## 1 - Intalar in the cmd lr-http-server with the following command line -> npm install lr-http-server
+   ######## 2 - Clone the repository.
+   ######## 3 - Open the cmd where the cloned repository is and type lr-http-server so that a server runs on port 8080 by default.
       If you want to change to another port you can type lr-http-server -p (port you want).
 
 ## ESPAÑOL
